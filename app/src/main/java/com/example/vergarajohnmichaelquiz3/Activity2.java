@@ -19,14 +19,14 @@ public class Activity2 extends AppCompatActivity {
         setContentView(R.layout.activity_2);
         txtName = findViewById(R.id.tvName);
         txtPassword = findViewById(R.id.tvPassword);
+        txtEmail = findViewById(R.id.etEmail);
     }
 
     public void displayUser(View v){
         SharedPreferences sp = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         txtName.setText(sp.getString("user", ""));
         txtPassword.setText(sp.getString("pwd", ""));
-        txtEmail = findViewById(R.id.button2);
-        Toast.makeText(getApplicationContext(),"Email", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, sp.getString("Email", ""), Toast.LENGTH_SHORT).show();
     }
 
     public void goRegister(View v){
